@@ -132,7 +132,12 @@ namespace TrainIrregularVerbs
                 }
             }
         }
-        
+
+
+        internal object GetPathAudio()
+        {
+            return Path.GetFullPath(String.Format(@"Data\Audio\{0}.mp3", EnglishVerbForm[FormVerb.Form1]));
+        }
     }
 
     internal enum TenseVerb {

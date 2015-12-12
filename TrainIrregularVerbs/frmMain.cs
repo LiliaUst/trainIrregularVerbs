@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
+using NAudio;
+using NAudio.Wave;
 
 namespace TrainIrregularVerbs
 {
@@ -67,13 +71,15 @@ namespace TrainIrregularVerbs
         void currentTrain_StepPrepared(object sender, StepPreparedEventArgs e)
         {
             e.StepData.PreparingTrainVerb();
-            lbTrain.Text = String.Format(templateVerb, e.StepData.EnglishPhrase, e.StepData.RussianPhrase);
+            lbTrain.Text = String.Format(templateVerb, e.StepData.RussianPhrase, e.StepData.EnglishPhrase);
             lbEngVerb3Form.Text = e.StepData.EnglishVerb;
             lbPronuncVerb.Text = e.StepData.EnglishPronunciation;
             lbRusVerbInd.Text = e.StepData.RussianVerbIndefinite;
             
             lbFromTo.Text = String.Format(templateFromTo, e.StepNumber, currentTrain.CountStep);
             pbProgress.Value = e.StepNumber;
+
+            btPlay.Tag = e.StepData.GetPathAudio();
         }
 
         void currentTrain_TrainEnd(object sender, TrainEndEventArgs e)
@@ -101,12 +107,39 @@ namespace TrainIrregularVerbs
             btNext.Visible = true;
             btStop.Visible = true;
             btStart.Visible = false;
-
         }
 
+        IWavePlayer waveOutDevice;
+        AudioFileReader audioFileReader;
         private void btPlay_Click(object sender, EventArgs e)
         {
-            //MediaPlayer pl = new MediaPlayer();
+            CloseWaveOut();
+            Control ctrl = sender as Control;
+            if (ctrl != null && ctrl.Tag != null && File.Exists(ctrl.Tag.ToString()))
+            {
+                waveOutDevice = new WaveOut();
+                audioFileReader = new AudioFileReader(ctrl.Tag.ToString());//Path.GetFullPath(@"Data\Audio\become.mp3"));
+                waveOutDevice.Init(audioFileReader);
+                waveOutDevice.Play();
+            }
+        }
+
+        private void CloseWaveOut()
+        {
+            if (waveOutDevice != null)
+            {
+                waveOutDevice.Stop();
+            }
+            if (audioFileReader != null)
+            {
+                audioFileReader.Dispose();
+                audioFileReader = null;
+            }
+            if (waveOutDevice != null)
+            {
+                waveOutDevice.Dispose();
+                waveOutDevice = null;
+            }
         }
     }
 }

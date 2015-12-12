@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.pnlTrain = new System.Windows.Forms.Panel();
-            this.pnlControl = new System.Windows.Forms.Panel();
-            this.btStop = new System.Windows.Forms.Button();
+            this.gbDetail = new System.Windows.Forms.GroupBox();
+            this.btPlay = new System.Windows.Forms.Button();
+            this.lbRusVerbInd = new System.Windows.Forms.Label();
+            this.lbPronuncVerb = new System.Windows.Forms.Label();
+            this.lbEngVerb3Form = new System.Windows.Forms.Label();
             this.lbTrain = new System.Windows.Forms.Label();
+            this.pnlControl = new System.Windows.Forms.Panel();
+            this.btStart = new System.Windows.Forms.Button();
+            this.lbFromTo = new System.Windows.Forms.Label();
+            this.pbProgress = new System.Windows.Forms.ProgressBar();
+            this.btNext = new System.Windows.Forms.Button();
+            this.btStop = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pnlTool = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.gbDetail = new System.Windows.Forms.GroupBox();
-            this.lbEngVerb3Form = new System.Windows.Forms.Label();
-            this.lbPronuncVerb = new System.Windows.Forms.Label();
-            this.lbRusVerbInd = new System.Windows.Forms.Label();
-            this.btNext = new System.Windows.Forms.Button();
-            this.pbProgress = new System.Windows.Forms.ProgressBar();
-            this.lbFromTo = new System.Windows.Forms.Label();
-            this.btStart = new System.Windows.Forms.Button();
-            this.btPlay = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlTrain.SuspendLayout();
+            this.gbDetail.SuspendLayout();
             this.pnlControl.SuspendLayout();
             this.pnlTool.SuspendLayout();
-            this.gbDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTrain
@@ -62,6 +62,82 @@
             this.pnlTrain.Name = "pnlTrain";
             this.pnlTrain.Size = new System.Drawing.Size(729, 208);
             this.pnlTrain.TabIndex = 0;
+            // 
+            // gbDetail
+            // 
+            this.gbDetail.Controls.Add(this.btPlay);
+            this.gbDetail.Controls.Add(this.lbRusVerbInd);
+            this.gbDetail.Controls.Add(this.lbPronuncVerb);
+            this.gbDetail.Controls.Add(this.lbEngVerb3Form);
+            this.gbDetail.Location = new System.Drawing.Point(18, 55);
+            this.gbDetail.Name = "gbDetail";
+            this.gbDetail.Size = new System.Drawing.Size(691, 146);
+            this.gbDetail.TabIndex = 1;
+            this.gbDetail.TabStop = false;
+            this.gbDetail.Text = "Detail";
+            // 
+            // btPlay
+            // 
+            this.btPlay.AutoSize = true;
+            this.btPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btPlay.Image = global::TrainIrregularVerbs.Properties.Resources.play16;
+            this.btPlay.Location = new System.Drawing.Point(22, 75);
+            this.btPlay.Name = "btPlay";
+            this.btPlay.Size = new System.Drawing.Size(28, 23);
+            this.btPlay.TabIndex = 3;
+            this.btPlay.UseVisualStyleBackColor = true;
+            this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
+            // 
+            // lbRusVerbInd
+            // 
+            this.lbRusVerbInd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbRusVerbInd.AutoEllipsis = true;
+            this.lbRusVerbInd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbRusVerbInd.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbRusVerbInd.Location = new System.Drawing.Point(19, 111);
+            this.lbRusVerbInd.Name = "lbRusVerbInd";
+            this.lbRusVerbInd.Size = new System.Drawing.Size(655, 23);
+            this.lbRusVerbInd.TabIndex = 2;
+            this.lbRusVerbInd.Text = "получать";
+            // 
+            // lbPronuncVerb
+            // 
+            this.lbPronuncVerb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbPronuncVerb.AutoEllipsis = true;
+            this.lbPronuncVerb.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbPronuncVerb.ForeColor = System.Drawing.Color.DimGray;
+            this.lbPronuncVerb.Location = new System.Drawing.Point(50, 75);
+            this.lbPronuncVerb.Name = "lbPronuncVerb";
+            this.lbPronuncVerb.Size = new System.Drawing.Size(624, 23);
+            this.lbPronuncVerb.TabIndex = 1;
+            this.lbPronuncVerb.Text = "[ gou wˈent gˈɒn]";
+            // 
+            // lbEngVerb3Form
+            // 
+            this.lbEngVerb3Form.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbEngVerb3Form.AutoEllipsis = true;
+            this.lbEngVerb3Form.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbEngVerb3Form.Location = new System.Drawing.Point(17, 24);
+            this.lbEngVerb3Form.Name = "lbEngVerb3Form";
+            this.lbEngVerb3Form.Size = new System.Drawing.Size(655, 33);
+            this.lbEngVerb3Form.TabIndex = 0;
+            this.lbEngVerb3Form.Text = "go, went, gone";
+            // 
+            // lbTrain
+            // 
+            this.lbTrain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTrain.AutoEllipsis = true;
+            this.lbTrain.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbTrain.ForeColor = System.Drawing.Color.Brown;
+            this.lbTrain.Location = new System.Drawing.Point(12, 16);
+            this.lbTrain.Name = "lbTrain";
+            this.lbTrain.Size = new System.Drawing.Size(705, 36);
+            this.lbTrain.TabIndex = 0;
+            this.lbTrain.Text = "Она шла - She went";
             // 
             // pnlControl
             // 
@@ -76,6 +152,49 @@
             this.pnlControl.Size = new System.Drawing.Size(729, 51);
             this.pnlControl.TabIndex = 1;
             // 
+            // btStart
+            // 
+            this.btStart.Location = new System.Drawing.Point(327, 16);
+            this.btStart.Name = "btStart";
+            this.btStart.Size = new System.Drawing.Size(75, 23);
+            this.btStart.TabIndex = 5;
+            this.btStart.Text = "Start";
+            this.btStart.UseVisualStyleBackColor = true;
+            this.btStart.Click += new System.EventHandler(this.btStart_Click);
+            // 
+            // lbFromTo
+            // 
+            this.lbFromTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbFromTo.AutoSize = true;
+            this.lbFromTo.Location = new System.Drawing.Point(281, 22);
+            this.lbFromTo.Name = "lbFromTo";
+            this.lbFromTo.Size = new System.Drawing.Size(63, 13);
+            this.lbFromTo.TabIndex = 4;
+            this.lbFromTo.Text = "from 1 to 50";
+            // 
+            // pbProgress
+            // 
+            this.pbProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pbProgress.Location = new System.Drawing.Point(99, 16);
+            this.pbProgress.Maximum = 50;
+            this.pbProgress.Name = "pbProgress";
+            this.pbProgress.Size = new System.Drawing.Size(175, 23);
+            this.pbProgress.Step = 1;
+            this.pbProgress.TabIndex = 3;
+            this.pbProgress.Value = 1;
+            // 
+            // btNext
+            // 
+            this.btNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btNext.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btNext.Location = new System.Drawing.Point(18, 16);
+            this.btNext.Name = "btNext";
+            this.btNext.Size = new System.Drawing.Size(75, 23);
+            this.btNext.TabIndex = 1;
+            this.btNext.Text = "Next";
+            this.btNext.UseVisualStyleBackColor = true;
+            this.btNext.Click += new System.EventHandler(this.btNext_Click);
+            // 
             // btStop
             // 
             this.btStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -87,19 +206,6 @@
             this.btStop.Text = "Stop";
             this.btStop.UseVisualStyleBackColor = true;
             this.btStop.Click += new System.EventHandler(this.btStop_Click);
-            // 
-            // lbTrain
-            // 
-            this.lbTrain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbTrain.AutoEllipsis = true;
-            this.lbTrain.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbTrain.ForeColor = System.Drawing.Color.Brown;
-            this.lbTrain.Location = new System.Drawing.Point(12, 16);
-            this.lbTrain.Name = "lbTrain";
-            this.lbTrain.Size = new System.Drawing.Size(705, 36);
-            this.lbTrain.TabIndex = 0;
-            this.lbTrain.Text = "Она шла - She went";
             // 
             // linkLabel1
             // 
@@ -124,14 +230,14 @@
             this.pnlTool.Size = new System.Drawing.Size(729, 34);
             this.pnlTool.TabIndex = 2;
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = ">";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(183, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Top-50 irregular verbs";
             // 
             // label3
             // 
@@ -152,118 +258,14 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Past Simple";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(183, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Top-50 irregular verbs";
-            // 
-            // gbDetail
-            // 
-            this.gbDetail.Controls.Add(this.btPlay);
-            this.gbDetail.Controls.Add(this.lbRusVerbInd);
-            this.gbDetail.Controls.Add(this.lbPronuncVerb);
-            this.gbDetail.Controls.Add(this.lbEngVerb3Form);
-            this.gbDetail.Location = new System.Drawing.Point(18, 55);
-            this.gbDetail.Name = "gbDetail";
-            this.gbDetail.Size = new System.Drawing.Size(691, 146);
-            this.gbDetail.TabIndex = 1;
-            this.gbDetail.TabStop = false;
-            this.gbDetail.Text = "Detail";
-            // 
-            // lbEngVerb3Form
-            // 
-            this.lbEngVerb3Form.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbEngVerb3Form.AutoEllipsis = true;
-            this.lbEngVerb3Form.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbEngVerb3Form.Location = new System.Drawing.Point(17, 24);
-            this.lbEngVerb3Form.Name = "lbEngVerb3Form";
-            this.lbEngVerb3Form.Size = new System.Drawing.Size(655, 33);
-            this.lbEngVerb3Form.TabIndex = 0;
-            this.lbEngVerb3Form.Text = "go, went, gone";
-            // 
-            // lbPronuncVerb
-            // 
-            this.lbPronuncVerb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbPronuncVerb.AutoEllipsis = true;
-            this.lbPronuncVerb.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbPronuncVerb.ForeColor = System.Drawing.Color.DimGray;
-            this.lbPronuncVerb.Location = new System.Drawing.Point(19, 75);
-            this.lbPronuncVerb.Name = "lbPronuncVerb";
-            this.lbPronuncVerb.Size = new System.Drawing.Size(655, 23);
-            this.lbPronuncVerb.TabIndex = 1;
-            this.lbPronuncVerb.Text = "[ gou wˈent gˈɒn]";
-            // 
-            // lbRusVerbInd
-            // 
-            this.lbRusVerbInd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbRusVerbInd.AutoEllipsis = true;
-            this.lbRusVerbInd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbRusVerbInd.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbRusVerbInd.Location = new System.Drawing.Point(19, 111);
-            this.lbRusVerbInd.Name = "lbRusVerbInd";
-            this.lbRusVerbInd.Size = new System.Drawing.Size(655, 23);
-            this.lbRusVerbInd.TabIndex = 2;
-            this.lbRusVerbInd.Text = "получать";
-            // 
-            // btNext
-            // 
-            this.btNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btNext.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btNext.Location = new System.Drawing.Point(18, 16);
-            this.btNext.Name = "btNext";
-            this.btNext.Size = new System.Drawing.Size(75, 23);
-            this.btNext.TabIndex = 1;
-            this.btNext.Text = "Next";
-            this.btNext.UseVisualStyleBackColor = true;
-            this.btNext.Click += new System.EventHandler(this.btNext_Click);
-            // 
-            // pbProgress
-            // 
-            this.pbProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pbProgress.Location = new System.Drawing.Point(99, 16);
-            this.pbProgress.Maximum = 50;
-            this.pbProgress.Name = "pbProgress";
-            this.pbProgress.Size = new System.Drawing.Size(175, 23);
-            this.pbProgress.Step = 1;
-            this.pbProgress.TabIndex = 3;
-            this.pbProgress.Value = 1;
-            // 
-            // lbFromTo
-            // 
-            this.lbFromTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbFromTo.AutoSize = true;
-            this.lbFromTo.Location = new System.Drawing.Point(281, 22);
-            this.lbFromTo.Name = "lbFromTo";
-            this.lbFromTo.Size = new System.Drawing.Size(63, 13);
-            this.lbFromTo.TabIndex = 4;
-            this.lbFromTo.Text = "from 1 to 50";
-            // 
-            // btStart
-            // 
-            this.btStart.Location = new System.Drawing.Point(327, 16);
-            this.btStart.Name = "btStart";
-            this.btStart.Size = new System.Drawing.Size(75, 23);
-            this.btStart.TabIndex = 5;
-            this.btStart.Text = "Start";
-            this.btStart.UseVisualStyleBackColor = true;
-            this.btStart.Click += new System.EventHandler(this.btStart_Click);
-            // 
-            // btPlay
-            // 
-            this.btPlay.Location = new System.Drawing.Point(153, 75);
-            this.btPlay.Name = "btPlay";
-            this.btPlay.Size = new System.Drawing.Size(75, 23);
-            this.btPlay.TabIndex = 3;
-            this.btPlay.Text = "button1";
-            this.btPlay.UseVisualStyleBackColor = true;
-            this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(89, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = ">";
             // 
             // frmMain
             // 
@@ -284,11 +286,12 @@
             this.Text = "Irregular Verbs Train";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlTrain.ResumeLayout(false);
+            this.gbDetail.ResumeLayout(false);
+            this.gbDetail.PerformLayout();
             this.pnlControl.ResumeLayout(false);
             this.pnlControl.PerformLayout();
             this.pnlTool.ResumeLayout(false);
             this.pnlTool.PerformLayout();
-            this.gbDetail.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

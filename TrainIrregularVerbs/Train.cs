@@ -29,16 +29,16 @@ namespace TrainIrregularVerbs
         {
             currentStep = 0;
             indexStep = -1;
-            random = new Random();
             OnStepReset(new EventArgs());
             trainData.Open();
+            random = new RandomNotRepeat(0, CountStep);
         }
 
         internal void NextStep()
         {
             indexStep++;
 
-            currentStep = random.Next(0, CountStep);
+            currentStep = random.Next();
 
             // Завершили процесс
             if (indexStep + 1 > trainData.ListTrain.Count)
