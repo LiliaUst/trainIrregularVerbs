@@ -14,6 +14,14 @@ namespace TrainIrregularVerbs
         private int currentStep;
         private int indexStep;
         private Random random;
+        private VerbBrowserOpen open;
+        private string nameTrain;
+        private string descrTrain;
+
+        public string DescriptionTrain
+        {
+            get { return descrTrain; }
+        }
 
         internal int CountStep
         {
@@ -23,6 +31,8 @@ namespace TrainIrregularVerbs
         internal Train()
         {
             trainData = new TrainData();
+            nameTrain = "irregularVerbsTop51";
+            descrTrain = "Top-51 irregular verbs";
         }
 
         internal void Open()
@@ -84,6 +94,21 @@ namespace TrainIrregularVerbs
         {
             OnStepReset(new EventArgs());
             OnTrainEnd(new TrainEndEventArgs(codeResult));
+        }
+
+        internal void Reset()
+        {
+            Stop(2);
+        }
+
+        internal void Print()
+        {
+            if (trainData.ListTrain == null)
+            {
+                trainData.Open();
+            }
+            open = new VerbBrowserOpen(nameTrain, DescriptionTrain, trainData.ListTrain);
+            open.Open();
         }
     }
 

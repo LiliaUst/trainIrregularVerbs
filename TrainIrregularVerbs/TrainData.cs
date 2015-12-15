@@ -36,7 +36,6 @@ namespace TrainIrregularVerbs
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-
                         string[] parts = line.Split(';');
                         var verb = new VerbData(parts);
                         listTrain.Add(verb);

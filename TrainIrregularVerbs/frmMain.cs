@@ -16,6 +16,8 @@ namespace TrainIrregularVerbs
     public partial class frmMain : Form
     {
         private Train currentTrain;
+        private IWavePlayer waveOutDevice;
+        private AudioFileReader audioFileReader;
 
         private readonly string templateVerb;
         private readonly string templateFromTo;
@@ -26,6 +28,19 @@ namespace TrainIrregularVerbs
             templateFromTo = "from {0} to {1}";
 
             InitializeComponent();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            currentTrain = new Train();
+            currentTrain.StepReset += new EventHandler<EventArgs>(currentTrain_StepReset);
+            currentTrain.TrainEnd += new EventHandler<TrainEndEventArgs>(currentTrain_TrainEnd);
+            currentTrain.StepPrepared += new EventHandler<StepPreparedEventArgs>(currentTrain_StepPrepared);
+
+            currentTrain.Reset();
+
+            linkSet.Text = currentTrain.DescriptionTrain;
+            //StartTrain();
         }
 
         private void btStop_Click(object sender, EventArgs e)
@@ -39,16 +54,6 @@ namespace TrainIrregularVerbs
         private void btNext_Click(object sender, EventArgs e)
         {
             currentTrain.NextStep();
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            currentTrain = new Train();
-            currentTrain.StepReset += new EventHandler<EventArgs>(currentTrain_StepReset);
-            currentTrain.TrainEnd += new EventHandler<TrainEndEventArgs>(currentTrain_TrainEnd);
-            currentTrain.StepPrepared += new EventHandler<StepPreparedEventArgs>(currentTrain_StepPrepared);
-
-            StartTrain();
         }
 
         void currentTrain_StepReset(object sender, EventArgs e)
@@ -109,8 +114,6 @@ namespace TrainIrregularVerbs
             btStart.Visible = false;
         }
 
-        IWavePlayer waveOutDevice;
-        AudioFileReader audioFileReader;
         private void btPlay_Click(object sender, EventArgs e)
         {
             CloseWaveOut();
@@ -140,6 +143,16 @@ namespace TrainIrregularVerbs
                 waveOutDevice.Dispose();
                 waveOutDevice = null;
             }
+        }
+
+        private void tsAllVerbs_Click(object sender, EventArgs e)
+        {
+            currentTrain.Print();
+        }
+
+        private void linkSet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

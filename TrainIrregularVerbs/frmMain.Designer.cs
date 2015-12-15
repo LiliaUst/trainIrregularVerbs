@@ -30,7 +30,6 @@
         {
             this.pnlTrain = new System.Windows.Forms.Panel();
             this.gbDetail = new System.Windows.Forms.GroupBox();
-            this.btPlay = new System.Windows.Forms.Button();
             this.lbRusVerbInd = new System.Windows.Forms.Label();
             this.lbPronuncVerb = new System.Windows.Forms.Label();
             this.lbEngVerb3Form = new System.Windows.Forms.Label();
@@ -43,14 +42,18 @@
             this.btStop = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pnlTool = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btPlay = new System.Windows.Forms.Button();
+            this.tsAllVerbs = new System.Windows.Forms.ToolStripButton();
+            this.linkSet = new System.Windows.Forms.LinkLabel();
             this.pnlTrain.SuspendLayout();
             this.gbDetail.SuspendLayout();
             this.pnlControl.SuspendLayout();
             this.pnlTool.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTrain
@@ -58,9 +61,9 @@
             this.pnlTrain.Controls.Add(this.gbDetail);
             this.pnlTrain.Controls.Add(this.lbTrain);
             this.pnlTrain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTrain.Location = new System.Drawing.Point(0, 34);
+            this.pnlTrain.Location = new System.Drawing.Point(0, 41);
             this.pnlTrain.Name = "pnlTrain";
-            this.pnlTrain.Size = new System.Drawing.Size(729, 208);
+            this.pnlTrain.Size = new System.Drawing.Size(729, 209);
             this.pnlTrain.TabIndex = 0;
             // 
             // gbDetail
@@ -75,18 +78,6 @@
             this.gbDetail.TabIndex = 1;
             this.gbDetail.TabStop = false;
             this.gbDetail.Text = "Detail";
-            // 
-            // btPlay
-            // 
-            this.btPlay.AutoSize = true;
-            this.btPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btPlay.Image = global::TrainIrregularVerbs.Properties.Resources.play16;
-            this.btPlay.Location = new System.Drawing.Point(22, 75);
-            this.btPlay.Name = "btPlay";
-            this.btPlay.Size = new System.Drawing.Size(28, 23);
-            this.btPlay.TabIndex = 3;
-            this.btPlay.UseVisualStyleBackColor = true;
-            this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
             // 
             // lbRusVerbInd
             // 
@@ -147,7 +138,7 @@
             this.pnlControl.Controls.Add(this.btNext);
             this.pnlControl.Controls.Add(this.btStop);
             this.pnlControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlControl.Location = new System.Drawing.Point(0, 242);
+            this.pnlControl.Location = new System.Drawing.Point(0, 250);
             this.pnlControl.Name = "pnlControl";
             this.pnlControl.Size = new System.Drawing.Size(729, 51);
             this.pnlControl.TabIndex = 1;
@@ -219,7 +210,8 @@
             // 
             // pnlTool
             // 
-            this.pnlTool.Controls.Add(this.label4);
+            this.pnlTool.Controls.Add(this.linkSet);
+            this.pnlTool.Controls.Add(this.toolStrip1);
             this.pnlTool.Controls.Add(this.label3);
             this.pnlTool.Controls.Add(this.linkLabel2);
             this.pnlTool.Controls.Add(this.label2);
@@ -227,17 +219,8 @@
             this.pnlTool.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTool.Location = new System.Drawing.Point(0, 0);
             this.pnlTool.Name = "pnlTool";
-            this.pnlTool.Size = new System.Drawing.Size(729, 34);
+            this.pnlTool.Size = new System.Drawing.Size(729, 41);
             this.pnlTool.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(183, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Top-50 irregular verbs";
             // 
             // label3
             // 
@@ -267,13 +250,59 @@
             this.label2.TabIndex = 2;
             this.label2.Text = ">";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsAllVerbs});
+            this.toolStrip1.Location = new System.Drawing.Point(636, 9);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(84, 25);
+            this.toolStrip1.TabIndex = 6;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btPlay
+            // 
+            this.btPlay.AutoSize = true;
+            this.btPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btPlay.Image = global::TrainIrregularVerbs.Properties.Resources.play16;
+            this.btPlay.Location = new System.Drawing.Point(22, 75);
+            this.btPlay.Name = "btPlay";
+            this.btPlay.Size = new System.Drawing.Size(28, 23);
+            this.btPlay.TabIndex = 3;
+            this.btPlay.UseVisualStyleBackColor = true;
+            this.btPlay.Click += new System.EventHandler(this.btPlay_Click);
+            // 
+            // tsAllVerbs
+            // 
+            this.tsAllVerbs.Image = global::TrainIrregularVerbs.Properties.Resources.browser;
+            this.tsAllVerbs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsAllVerbs.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsAllVerbs.Name = "tsAllVerbs";
+            this.tsAllVerbs.Size = new System.Drawing.Size(72, 22);
+            this.tsAllVerbs.Text = "All verbs";
+            this.tsAllVerbs.ToolTipText = "Open in browser";
+            this.tsAllVerbs.Click += new System.EventHandler(this.tsAllVerbs_Click);
+            // 
+            // linkSet
+            // 
+            this.linkSet.AutoSize = true;
+            this.linkSet.Location = new System.Drawing.Point(183, 9);
+            this.linkSet.Name = "linkSet";
+            this.linkSet.Size = new System.Drawing.Size(110, 13);
+            this.linkSet.TabIndex = 7;
+            this.linkSet.TabStop = true;
+            this.linkSet.Text = "Top-52 irregular verbs";
+            this.linkSet.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSet_LinkClicked);
+            // 
             // frmMain
             // 
             this.AcceptButton = this.btNext;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btStop;
-            this.ClientSize = new System.Drawing.Size(729, 293);
+            this.ClientSize = new System.Drawing.Size(729, 301);
             this.Controls.Add(this.pnlTrain);
             this.Controls.Add(this.pnlTool);
             this.Controls.Add(this.pnlControl);
@@ -283,7 +312,7 @@
             this.MinimizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Irregular Verbs Train";
+            this.Text = "Training Irregular Verbs";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlTrain.ResumeLayout(false);
             this.gbDetail.ResumeLayout(false);
@@ -292,6 +321,8 @@
             this.pnlControl.PerformLayout();
             this.pnlTool.ResumeLayout(false);
             this.pnlTool.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -307,7 +338,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox gbDetail;
         private System.Windows.Forms.Label lbRusVerbInd;
         private System.Windows.Forms.Label lbPronuncVerb;
@@ -317,6 +347,9 @@
         private System.Windows.Forms.Button btNext;
         private System.Windows.Forms.Button btStart;
         private System.Windows.Forms.Button btPlay;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsAllVerbs;
+        private System.Windows.Forms.LinkLabel linkSet;
     }
 }
 
